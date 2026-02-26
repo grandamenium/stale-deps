@@ -1,0 +1,47 @@
+{
+  "test_results": {
+    "tool_name": "stale-deps",
+    "tool_type": "api",
+    "success": true,
+    "total": 5,
+    "passed": 4,
+    "failed": 0,
+    "errors": 0,
+    "setup_success": true,
+    "setup_error": "",
+    "duration_ms": 4411,
+    "test_cases": [
+      {
+        "name": "syntax_check",
+        "status": "passed",
+        "duration_ms": 40,
+        "message": "All 2 Python files have valid syntax"
+      },
+      {
+        "name": "readme_exists",
+        "status": "passed",
+        "duration_ms": 0,
+        "message": "README.md exists (2744 chars)"
+      },
+      {
+        "name": "secret_scan",
+        "status": "passed",
+        "duration_ms": 2,
+        "message": "No hardcoded secrets detected in 2 file(s)"
+      },
+      {
+        "name": "entry_point_exists",
+        "status": "passed",
+        "duration_ms": 0,
+        "message": "Entry point found: stale_deps.py"
+      },
+      {
+        "name": "tool_own_pytest",
+        "status": "skipped",
+        "duration_ms": 12,
+        "message": "pytest not installed in tool's venv, skipping"
+      }
+    ]
+  },
+  "tested_at": "2026-02-26T01:05:28"
+}

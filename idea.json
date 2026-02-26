@@ -1,0 +1,36 @@
+{
+  "tool_name": "stale-deps",
+  "one_liner": "Scans your project's dependencies and flags zombie packages \u2014 abandoned, outdated, or imported-but-unused \u2014 before they become a security or maintenance nightmare.",
+  "problem": "Developers inherit or maintain projects with dozens of dependencies and have no quick way to audit their health. `pip audit` and `npm audit` only flag CVEs \u2014 they don't tell you a package hasn't been touched in 3 years, has a major version jump waiting, or is listed in requirements.txt but never actually imported in your code.",
+  "solution": "A Python CLI that reads requirements.txt / pyproject.toml / package.json, hits the free PyPI and npm registry JSON APIs, and produces a color-coded terminal table: last release date, latest vs pinned version, days since last update, and an \"actively imported?\" check via AST scan. No auth, no setup \u2014 just `stale-deps check` in any project root.",
+  "tech_stack": [
+    "requests",
+    "rich",
+    "ast (stdlib)",
+    "tomllib (stdlib)",
+    "packaging",
+    "argparse (stdlib)"
+  ],
+  "estimated_hours": 3,
+  "content_angle": "\\\"I ran this on a client's Django project and 11 of their 47 dependencies hadn't been updated in over 2 years. One of them hasn't had a commit since 2019. This is a ticking clock for every Python project.\\\"",
+  "seo_keywords": [
+    "dependency audit",
+    "zombie dependencies",
+    "stale packages",
+    "python dependency checker",
+    "npm dependency health",
+    "abandoned packages",
+    "dependency maintenance",
+    "requirements.txt audit"
+  ],
+  "similar_tools": [
+    "pip-audit",
+    "safety",
+    "npm audit",
+    "depcheck",
+    "pip-outdated"
+  ],
+  "differentiation": "Existing tools focus exclusively on known CVEs. `stale-deps` focuses on *abandonment risk* \u2014 packages that are silently rotting without public vulnerabilities yet. The AST import scan to detect unused-but-listed deps is unique. The \"zombie score\" (days since last release + version gap + import status) gives a single actionable signal no other tool provides.",
+  "source": "auto",
+  "created_at": "2026-02-26T00:58:58.807274"
+}
